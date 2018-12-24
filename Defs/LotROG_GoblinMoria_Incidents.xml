@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <IncidentDef>
+    <defName>LOTRMoriaInfestation</defName>
+    <label>moria goblins infestation</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_LOTRMoriaInfestation</workerClass>
+    <letterLabel>Moria Goblins Infestation</letterLabel>
+    <letterText>A moria goblin camp has emerged!\n\nIt will slowly spawn goblins as well as produce additional structures. If you don't want it to infest the whole area, muster your forces and destroy it. But beware - the goblins will defend their encampment.</letterText>
+    <letterDef>ThreatBig</letterDef>
+    <baseChance>2.5</baseChance>
+    <minRefireDays>30</minRefireDays>
+    <category>ThreatBig</category>
+    <pointsScaleable>true</pointsScaleable>
+    <minThreatPoints>400</minThreatPoints>
+	<earliestDay>45</earliestDay>
+  </IncidentDef>
+  
+
+</Defs>

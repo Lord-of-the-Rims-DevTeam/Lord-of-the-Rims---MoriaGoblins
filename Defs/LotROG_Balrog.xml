@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BugsThingBase">
+    <defName>LotR_Balrog</defName>
+    <label>Balrog</label>
+    <description>Balrogs, also known as the Valaraukar, were Maiar that were seduced and corrupted by Melkor into his service. These ancient creatures had long been forgotten by most but the elders of the elves that had seen its terror in the First Age. Some are thought to have survived the War of Wrath and slumber quietly in the depth of mountains... until should it be awaken again.</description>
+    <statBases>
+      <MoveSpeed>6</MoveSpeed>
+      <ComfyTemperatureMin>-100</ComfyTemperatureMin>
+      <ComfyTemperatureMax>250</ComfyTemperatureMax>
+      <MarketValue>5000</MarketValue>
+	  <LeatherAmount>120</LeatherAmount>
+	  <ArmorRating_Blunt>2.0</ArmorRating_Blunt>
+      <ArmorRating_Sharp>2.0</ArmorRating_Sharp>
+	  <ArmorRating_Heat>2.0</ArmorRating_Heat>
+	  <Flammability>0</Flammability>
+    </statBases>
+    <tools>
+      <li>
+        <label>left fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>24.2</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>14</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>right fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>24.2</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>14</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>teeth</label>
+        <capacities>
+          <li>Bite</li>
+        </capacities>
+        <power>24.2</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+        <chanceFactor>0.07</chanceFactor>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>25</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+	<comps>
+		<li Class="CompProperties_GlowAndSmoke">
+		<heatPerSecond>12</heatPerSecond>
+        <heatPushMaxTemperature>88</heatPushMaxTemperature>
+		</li>
+		<li Class="CompProperties_SpawnerFire">
+		<fireDef>Fire</fireDef>
+        <spawnCountOnSpawn>10</spawnCountOnSpawn>
+        <spawnMtbHours>0.05</spawnMtbHours>
+        <spawnRadius>5</spawnRadius>
+		</li>
+	  </comps>
+    <race>	
+      <thinkTreeMain>Mechanoid</thinkTreeMain>
+	  <intelligence>ToolUser</intelligence>
+	  <trainability>Advanced</trainability>
+      <body>Monkey</body>
+      <baseBodySize>4.0</baseBodySize>
+      <!--<baseHungerRate>1.0</baseHungerRate>-->
+      <baseHealthScale>8.8</baseHealthScale>
+	  <!--<foodType>CarnivoreAnimal, AnimalProduct</foodType>-->
+	  <leatherDef>Leather_Rhinoceros</leatherDef>
+	  <useMeatFrom>Rhinoceros</useMeatFrom>
+	  <manhunterOnDamageChance>1</manhunterOnDamageChance>
+	  <manhunterOnTameFailChance>0.025</manhunterOnTameFailChance>
+      <wildness>0.95</wildness>
+	  <needsRest>false</needsRest>
+      <hasGenders>false</hasGenders>
+      <foodType>None</foodType>
+      <lifeExpectancy>2500</lifeExpectancy>
+	  <gestationPeriodDays>1</gestationPeriodDays>
+	        <litterSizeCurve>
+        <points>
+          <li>(0.5, 0)</li>
+          <li>(1, 1)</li>
+          <li>(1.5, 1)</li>
+          <li>(2, 0)</li>
+        </points>
+      </litterSizeCurve>
+	  <mateMtbHours>1</mateMtbHours>
+      <lifeStageAges>
+        <li>
+          <def>AnimalBaby</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>AnimalJuvenile</def>
+          <minAge>0.03</minAge>
+        </li>
+        <li>
+          <def>AnimalAdult</def>
+          <minAge>0.4</minAge>
+          <soundCall>Pawn_Thrumbo_Call</soundCall>
+          <soundAngry>Pawn_Thrumbo_Angry</soundAngry>
+          <soundWounded>Pawn_Thrumbo_Pain</soundWounded>
+          <soundDeath>Pawn_Thrumbo_Death</soundDeath>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+    </race>
+    <tradeTags>
+      <li>AnimalUncommon</li>
+    </tradeTags>
+	<butcherProducts>
+      <ThrumboHorn>2</ThrumboHorn>
+    </butcherProducts>
+  </ThingDef>
+  
+    <PawnKindDef ParentName="AnimalKindBase">
+    <defName>LotR_Balrog</defName>
+    <label>Balrog</label>
+    <race>LotR_Balrog</race>
+    <combatPower>5000</combatPower>
+    <defaultFactionType>Insect</defaultFactionType>
+		<canArriveManhunter>false</canArriveManhunter>
+    <lifeStages>
+      <li>
+	    <bodyGraphicData>
+		<texPath>Balrog/LotrBalrog</texPath>
+		<shaderType>TransparentPostLight</shaderType>
+          <drawSize>4</drawSize>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Thrumbo/Dessicated_Thrumbo</texPath>
+          <drawSize>1</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+		<texPath>Balrog/LotrBalrog</texPath>
+		<shaderType>TransparentPostLight</shaderType>
+          <drawSize>8</drawSize>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Thrumbo/Dessicated_Thrumbo</texPath>
+          <drawSize>2</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+		<texPath>Balrog/LotrBalrog</texPath>
+		<shaderType>TransparentPostLight</shaderType>
+          <drawSize>12</drawSize>
+          <shadowData>
+            <volume>(0.2, 0.3, 0.2)</volume>
+            <offset>(0,0,0)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Thrumbo/Dessicated_Thrumbo</texPath>
+          <drawSize>4</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+  
+  </Defs>

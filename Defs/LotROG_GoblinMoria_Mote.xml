@@ -1,0 +1,34 @@
+<Defs>
+
+<ThingDef ParentName="MoteBase">
+    <defName>Mote_DarkSmoke</defName>
+    <graphicData>
+      <texPath>Things/Mote/DarkSmoke</texPath>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.50</fadeInTime>
+      <solidTime>6</solidTime>
+      <fadeOutTime>3.2</fadeOutTime>
+      <growthRate>0.005</growthRate>
+    </mote>
+  </ThingDef>
+  
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_FierySparks</defName>
+    <graphicData>
+      <texPath>Things/Mote/FierySparks</texPath>
+	  <shaderType>MoteGlow</shaderType>
+	  <!--<shaderType>TransparentPostLight</shaderType>
+	  <graphicClass>Graphic_Flicker</graphicClass>-->
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.50</fadeInTime>
+      <solidTime>3</solidTime>
+      <fadeOutTime>1.2</fadeOutTime>
+      <growthRate>0.005</growthRate>
+    </mote>
+  </ThingDef>
+  
+  </Defs>

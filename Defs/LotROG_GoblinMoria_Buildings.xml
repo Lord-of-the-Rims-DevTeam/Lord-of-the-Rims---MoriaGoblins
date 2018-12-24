@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BuildingNaturalBase">
+    <defName>LOTRMoriaHive</defName>
+    <label>moria standard</label>
+    <description>A Flag of the Moria Goblins. Anywhere the standard is planted, shall be the place the Moria Goblins will take over.</description>
+    <thingClass>LOTRMoriaHive</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Natural/SteamGeyser</texPath>
+	  <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>Transparent</shaderType>
+	  <drawSize>(8,8)</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <rotatable>false</rotatable>
+    <fillPercent>0.6</fillPercent>
+    <statBases>
+      <MaxHitPoints>500</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+    </statBases>
+	<size>(4,4)</size>
+    <pathCost>50</pathCost>
+    <blockWind>false</blockWind>
+    <tickerType>Normal</tickerType>
+    <passability>PassThroughOnly</passability>
+    <killedLeavings>
+      <InsectJelly>30</InsectJelly>
+    </killedLeavings>
+    <comps>
+	  <li Class="LOTRMoriaCompProperties_SpawnerHives" />
+      <li Class="CompProperties_Spawner">
+        <thingToSpawn>InsectJelly</thingToSpawn>
+        <spawnCount>50</spawnCount>
+        <spawnIntervalRange>
+          <min>16000</min>
+          <max>30000</max>
+        </spawnIntervalRange>
+        <spawnMaxAdjacent>40</spawnMaxAdjacent>
+        <spawnForbidden>true</spawnForbidden>
+        <saveKeysPrefix>jelly</saveKeysPrefix>
+      </li>
+      <li Class="CompProperties_Maintainable">
+        <ticksHealthy>60000</ticksHealthy>
+        <ticksNeedsMaintenance>40000</ticksNeedsMaintenance>
+        <damagePerTickRare>10</damagePerTickRare>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  
+</Defs>
