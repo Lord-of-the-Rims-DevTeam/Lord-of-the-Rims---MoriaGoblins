@@ -6,11 +6,11 @@
     <label>moria standard</label>
     <description>A Flag of the Moria Goblins. Anywhere the standard is planted, shall be the place the Moria Goblins will take over.</description>
     <thingClass>LOTRMoriaHive</thingClass>
-    <graphicData>
-      <texPath>Things/Building/Natural/SteamGeyser</texPath>
+	<graphicData>
+      <texPath>MoriaGoblinFlag</texPath>
 	  <graphicClass>Graphic_Single</graphicClass>
       <shaderType>Transparent</shaderType>
-	  <drawSize>(8,8)</drawSize>
+	  <drawSize>(2,2)</drawSize>
     </graphicData>
     <altitudeLayer>Building</altitudeLayer>
     <rotatable>false</rotatable>
@@ -19,26 +19,25 @@
       <MaxHitPoints>500</MaxHitPoints>
       <Flammability>1.0</Flammability>
     </statBases>
-	<size>(4,4)</size>
+	<size>(1,1)</size>
     <pathCost>50</pathCost>
     <blockWind>false</blockWind>
     <tickerType>Normal</tickerType>
     <passability>PassThroughOnly</passability>
     <killedLeavings>
-      <InsectJelly>30</InsectJelly>
+      <WoodLog>1</WoodLog>
     </killedLeavings>
     <comps>
-	  <li Class="LOTRMoriaCompProperties_SpawnerHives" />
       <li Class="CompProperties_Spawner">
-        <thingToSpawn>InsectJelly</thingToSpawn>
-        <spawnCount>50</spawnCount>
+        <thingToSpawn>LOTRMoriaHut</thingToSpawn>
+        <spawnCount>1</spawnCount>
         <spawnIntervalRange>
           <min>16000</min>
           <max>30000</max>
         </spawnIntervalRange>
         <spawnMaxAdjacent>40</spawnMaxAdjacent>
         <spawnForbidden>true</spawnForbidden>
-        <saveKeysPrefix>jelly</saveKeysPrefix>
+        <saveKeysPrefix>moriahut</saveKeysPrefix>
       </li>
       <li Class="CompProperties_Maintainable">
         <ticksHealthy>60000</ticksHealthy>
@@ -47,6 +46,122 @@
       </li>
     </comps>
   </ThingDef>
+  
+    <ThingDef ParentName="BuildingNaturalBase">
+    <defName>LOTRMoriaHut</defName>
+    <label>moria standard</label>
+    <description>A typical Moria Goblins hut. Its shamby, but the goblins don't really care</description>
+    <thingClass>LOTRMoriaHive</thingClass>
+    <graphicData>
+      <texPath>MoriaGoblinHut</texPath>
+	  <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>Transparent</shaderType>
+	  <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <rotatable>false</rotatable>
+    <fillPercent>0.6</fillPercent>
+    <statBases>
+      <MaxHitPoints>500</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+    </statBases>
+	<size>(2,2)</size>
+    <pathCost>50</pathCost>
+    <blockWind>true</blockWind>
+    <tickerType>Normal</tickerType>
+    <passability>PassThroughOnly</passability>
+    <killedLeavings>
+      <WoodLog>1</WoodLog>
+    </killedLeavings>
+    <comps>
+	<li Class="LOTRMoriaCompProperties_SpawnerHives" />
+      <li Class="CompProperties_Spawner">
+        <thingToSpawn>TorchLamp</thingToSpawn>
+        <spawnCount>1</spawnCount>
+        <spawnIntervalRange>
+          <min>16000</min>
+          <max>30000</max>
+        </spawnIntervalRange>
+        <spawnMaxAdjacent>40</spawnMaxAdjacent>
+        <spawnForbidden>true</spawnForbidden>
+        <saveKeysPrefix>campfire</saveKeysPrefix>
+      </li>
+	  <li Class="CompProperties_Spawner">
+        <thingToSpawn>Campfire</thingToSpawn>
+        <spawnCount>1</spawnCount>
+        <spawnIntervalRange>
+          <min>30000</min>
+          <max>120000</max>
+        </spawnIntervalRange>
+        <spawnMaxAdjacent>80</spawnMaxAdjacent>
+        <spawnForbidden>true</spawnForbidden>
+        <saveKeysPrefix>campfire</saveKeysPrefix>
+      </li>
+	  <li Class="CompProperties_Spawner">
+        <thingToSpawn>LOTRMoriaDrum</thingToSpawn>
+        <spawnCount>1</spawnCount>
+        <spawnIntervalRange>
+          <min>120000</min>
+          <max>280000</max>
+        </spawnIntervalRange>
+        <spawnMaxAdjacent>80</spawnMaxAdjacent>
+        <spawnForbidden>true</spawnForbidden>
+        <saveKeysPrefix>moriadrum</saveKeysPrefix>
+      </li>
+      <li Class="CompProperties_Maintainable">
+        <ticksHealthy>60000</ticksHealthy>
+        <ticksNeedsMaintenance>40000</ticksNeedsMaintenance>
+        <damagePerTickRare>10</damagePerTickRare>
+      </li>
+    </comps>
+  </ThingDef>
+  
+   <ThingDef ParentName="BuildingNaturalBase">
+    <defName>LOTRMoriaDrum</defName>
+    <label>moria standard</label>
+    <description>A Moria Goblins war drum. Its noisy</description>
+    <thingClass>LOTRMoriaHive</thingClass>
+	<graphicData>
+      <texPath>MoriaGoblinDrum</texPath>
+	  <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>Transparent</shaderType>
+	  <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <rotatable>false</rotatable>
+    <fillPercent>0.6</fillPercent>
+    <statBases>
+      <MaxHitPoints>500</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+    </statBases>
+	<size>(1,1)</size>
+    <pathCost>50</pathCost>
+    <blockWind>false</blockWind>
+    <tickerType>Normal</tickerType>
+    <passability>PassThroughOnly</passability>
+    <killedLeavings>
+      <WoodLog>1</WoodLog>
+    </killedLeavings>
+    <comps>
+	<li Class="CompProperties_Spawner">
+        <thingToSpawn>LOTRMoriaHive</thingToSpawn>
+        <spawnCount>1</spawnCount>
+        <spawnIntervalRange>
+          <min>160000</min>
+          <max>300000</max>
+        </spawnIntervalRange>
+        <spawnMaxAdjacent>40</spawnMaxAdjacent>
+        <spawnForbidden>true</spawnForbidden>
+        <saveKeysPrefix>moriahut</saveKeysPrefix>
+      </li>	  
+      <li Class="CompProperties_Maintainable">
+        <ticksHealthy>60000</ticksHealthy>
+        <ticksNeedsMaintenance>40000</ticksNeedsMaintenance>
+        <damagePerTickRare>10</damagePerTickRare>
+      </li>
+    </comps>
+  </ThingDef>
+  
   
   
 </Defs>
